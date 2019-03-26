@@ -1,3 +1,16 @@
 ID: SAPMTA_APP
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: MTA_APP
+   type: hdb
+   path: MTA_APP
+   requires:
+    - name: hdi_MTA_APP
+
+resources:
+ - name: hdi_MTA_APP
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
